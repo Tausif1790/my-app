@@ -1,0 +1,17 @@
+<h1>{{ title }}</h1>
+
+<!-- 1. Display properties' values -->
+<p>User: {{ user }}</p>
+<p>Age: {{ age }}</p>
+
+<!-- 2. We can write expressions -->
+<p>Age next year: {{ age + 1 }}</p>
+
+<!-- 3. Concatenation -->
+<p>{{ user + ' is ' + age + ' years old.' }}</p>
+
+<!-- 4. We can use JavaScript properties and methods -->
+<p>Current Date: {{ currentDate | date: 'fullDate' }}</p>
+
+<!-- 5. We can use custom methods -->
+<p>{{ getWelcomeMessage() }}</p>
