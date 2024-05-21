@@ -1,0 +1,30 @@
+<h1>Using Template Reference Variables</h1>
+
+<!-- 1. Introduction -->
+<p>This example demonstrates how to use template reference variables in Angular.</p>
+
+<!-- Text box with template reference variable -->
+<input #inputRef type="text" placeholder="Enter text" name="textInput">
+
+<!-- 2. Get text box value by click event -->
+<button (click)="getValueByClick2(inputRef.value)">Get Value by Click</button>
+<p>Value by Click: {{ inputValue }}</p>
+
+<!-- 3. Get text box value by keyup event -->
+<input (keyup)="getValueByKeyup($event)" placeholder="Type and see the value">
+<p>Value by Keyup: {{ keyupValue }}</p>
+
+<!-- 4. Get placeholder, innerHtml, type, name attributes by reference variable -->
+<button (click)="getAttributes(inputRef)">Get Attributes</button>
+<p>Placeholder: {{ placeholder }}</p>
+<p>InnerHTML: {{ innerHtml }}</p>
+<p>Type: {{ type }}</p>
+<p>Name: {{ name }}</p>
+
+<!-- 5. Get template-reference reference in TS file -->
+<button (click)="accessTemplateRef()">Access Template Reference in TS</button>
+<p>Placeholder (via ViewChild): {{ placeholder }}</p>
+<p>Type (via ViewChild): {{ type }}</p>
+
+<!-- 6. Passing template reference variable -->
+<p>The template reference variable can be passed to methods to get values and attributes.</p>

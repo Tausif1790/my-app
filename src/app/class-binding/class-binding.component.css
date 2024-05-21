@@ -1,0 +1,19 @@
+.special {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .error {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .a {
+    color: rgb(128, 128, 0);
+    font-weight: bold;
+  }
+
+  .b {
+    color: rgb(15, 0, 128);
+    font-weight: bold;
+  }

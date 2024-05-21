@@ -1,0 +1,22 @@
+<h1>Angular Two-Way Data Binding using ngModel</h1>
+
+<!-- Introduction -->
+<p>This example demonstrates how to use two-way data binding in Angular using the ngModel directive.</p>
+
+<!-- Example 1: Binding a text input to a string property -->
+<label for="name">Name:</label>
+<input id="name" [(ngModel)]="userName" placeholder="Enter your name">
+<p>Your name is: {{ userName }}</p>
+
+<!-- Example 2: Binding a number input to a number property -->
+<label for="age">Age:</label>
+<input id="age" type="number" [(ngModel)]="userAge" placeholder="Enter your age">
+<p>Your age is: {{ userAge }}</p>
+
+<!-- Example 3: Binding an email input to a string property -->
+<label for="email">Email:</label>
+<input id="email" type="email" [(ngModel)]="userEmail" placeholder="Enter your email">
+<p>Your email is: {{ userEmail }}</p>
+
+<!-- Explanation -->
+<p>In the examples above, the ngModel directive is used to create a two-way data binding between the input fields and the component properties.</p>

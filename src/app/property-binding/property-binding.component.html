@@ -1,0 +1,16 @@
+<h1>Angular Property Binding</h1>
+
+<!-- 1. Binding to a property -->
+<img [src]="imageUrl" alt="Angular Logo">
+
+<!-- 2. Binding to a class property -->
+<button [class.active]="isActive">Active Button</button>
+
+<!-- 3. Binding to an attribute -->
+<button [attr.disabled]="buttonDisabled ? true : null">Disabled Button</button>
+
+<!-- 4. Binding to a style property -->
+<p [style.color]="textColor">This text is styled with property binding</p>
+
+<!-- 5. Using property binding to initialize input value -->
+<input [value]="inputText">

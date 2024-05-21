@@ -1,0 +1,27 @@
+<h1>Angular Events</h1>
+
+<!-- 1. Creating an Event Handler with button click -->
+<button (click)="onButtonClick()">Click Me</button>
+
+<!-- Display message -->
+<p>{{ message }}</p>
+
+<!-- 2. Initializing class properties on button click -->
+<button (click)="incrementCount()">Increment Count</button>
+<p>Count: {{ count }}</p>
+
+<!-- 3. Event handler with parameters -->
+<button (click)="greetUser('John')">Greet User</button>
+
+<!-- 4. Event Object as argument -->
+<button (click)="showEventType($event)">Show Event Type</button>
+
+<!-- 5. More Events -->
+<div (mouseover)="onMouseOver()" (mouseout)="onMouseOut()">
+  Hover over me
+</div>
+<p>Keyboard Events:</p>
+<input (keyup)="onKeyUp($event)" (keypress)="onKeyPress($event)" placeholder="Type something"/>
+
+<!-- Display message -->
+<p>{{ message }}</p>

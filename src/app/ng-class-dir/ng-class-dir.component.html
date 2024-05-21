@@ -1,0 +1,27 @@
+<h1>Angular ngClass Directive</h1>
+
+<!-- Introduction -->
+<p>This example demonstrates various ways to use the ngClass directive in Angular.</p>
+
+<!-- ngClass with string -->
+<div [ngClass]="classString">ngClass with String</div>
+
+<!-- ngClass with array -->
+<div [ngClass]="classArray">ngClass with Array</div>
+
+<!-- ngClass with objects -->
+<div [ngClass]="classObject">ngClass with Object</div>
+
+<!-- Dynamically Updating class names -->
+
+<!-- Using string -->
+<div [ngClass]="isHighlighted ? 'highlight' : 'italic'">Dynamic Class with String</div>
+
+<!-- Using array -->
+<div [ngClass]="classList">Dynamic Class with Array</div>
+
+<!-- Using TypeScript object -->
+<div [ngClass]="dynamicClassObject">Dynamic Class with Object</div>
+
+<!-- Button to toggle highlight class -->
+<button (click)="toggleHighlight()">Toggle Highlight</button>

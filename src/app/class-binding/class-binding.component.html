@@ -1,0 +1,23 @@
+<h1>Angular Class Binding</h1>
+
+<!-- Using the class Attribute -->
+<!-- <div class="isSpecial">Class Name Binding</div> -->
+
+<!-- 1. Using the DOM ClassName Property -->
+<div [className]="isSpecial ? 'special' : ''">Class Name Binding</div>
+
+<!-- 2. Using the Class shorthand -->
+<div [class.special]="isSpecial">Class Shorthand Binding</div>
+<div [class.error]="hasError">Error Class Shorthand Binding</div>
+
+<!-- 3. Using the NgClass directive -->
+<div [ngClass]="currentClasses">NgClass Directive Binding</div>
+
+<!-- Button to toggle error class -->
+<button (click)="toggleError()">Toggle Error Class</button>
+
+<br>
+<br>
+
+<!--conditionally apply calsses -->
+<div [class]="myClass()">Class Name Binding</div>

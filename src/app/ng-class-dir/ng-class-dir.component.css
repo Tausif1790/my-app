@@ -1,0 +1,29 @@
+.class-string {
+    color: blue;
+  }
+  
+  .class-array1 {
+    background-color: yellow;
+  }
+  
+  .class-array2 {
+    font-size: 20px;
+  }
+  
+  .class-obj1 {
+    text-decoration: underline;
+  }
+  
+  .class-obj2 {
+    font-weight: bold;
+  }
+  
+  .highlight {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .italic {
+    font-style: italic;
+  }
+  

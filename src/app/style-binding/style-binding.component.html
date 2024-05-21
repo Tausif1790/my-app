@@ -1,0 +1,20 @@
+<h1>Angular Style Binding</h1>
+
+<!-- 1. Single style binding -->
+<p [style.color]="textColor">Single Style Binding - Text Color</p>
+<p [style.fontSize]="fontSize">Single Style Binding - Font Size</p>
+
+<!-- 2. Multiple style binding -->
+<p [style.color]="isHighlighted ? 'red' : 'black'"
+   [style.font-weight]="isHighlighted ? 'bold' : 'normal'"
+   [style.background-color]="isHighlighted ? 'yellow' : 'transparent'">
+   Multiple Style Binding - Dynamic Styles (1)
+</p>
+
+<p [style] = " 'background-color:red; color:yellow' ">Multiple Style Binding - Dynamic Styles (2) </p>
+
+<!-- 3. Styles binding using ngStyle -->
+<p [ngStyle]="stylesObject">ngStyle Directive - Multiple Styles</p>
+
+<!-- Button to toggle highlight styles -->
+<button (click)="toggleHighlight()">Toggle Highlight Styles</button>
