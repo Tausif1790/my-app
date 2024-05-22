@@ -13,10 +13,10 @@ export class PropertyBindingComponent {
   isActive: boolean = true;
 
   // 3. Binding to an attribute
-  buttonDisabled: boolean = false;
+  buttonDisabled: boolean = true;
 
   // 4. Binding to a style property
-  textColor: string = 'blue';
+  textColor: string = 'red';
 
   // 5. Using property binding to initialize input value
   inputText: string = 'Initial text';

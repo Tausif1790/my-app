@@ -1,0 +1,52 @@
+Explanation in Code:
+Introduction:
+
+The introduction explains the purpose of the example, which is to demonstrate how to pass data from a parent component to a child component using Angular.
+How To Pass Single Data From Parent to Child Component:
+
+In parent.component.ts, singleData is defined as a string.
+In parent.component.html, the singleData is passed to the child component using property binding: <app-child [data]="singleData"></app-child>.
+In child.component.ts, the @Input() data: string; decorator is used to receive the data.
+How To Update Child Data From Parent Component:
+
+In parent.component.ts, updatedData is defined and updated using the updateData() method.
+In parent.component.html, the updated data is passed to the child component and a button is used to trigger the update: <button (click)="updateData()">Update Child Data</button>.
+In child.component.ts, the ngOnChanges lifecycle hook is used to detect changes in the input property.
+How To Pass An Array From Parent to Child Component:
+
+In parent.component.ts, arrayData is defined as an array of strings.
+In parent.component.html, the array is passed to the child component: <app-child [arrayData]="arrayData"></app-child>.
+In child.component.ts, the @Input() arrayData: string[]; decorator is used to receive the array data.
+In child.component.html, the *ngFor structural directive is used to loop through the array and display the items.
+How To Pass An Object From Parent to Child Component:
+
+In parent.component.ts, objectData is defined as an object with properties name and age.
+In parent.component.html, the object is passed to the child component: <app-child [objectData]="objectData"></app-child>.
+In child.component.ts, the @Input() objectData: { name: string, age: number }; decorator is used to receive the object data.
+In child.component.html, the object properties are displayed using interpolation.
+These examples demonstrate how to pass various types of data from a parent component to a child component in Angular, making use of Angular's property binding and input decorators.
+
+/////////////////////////// Child to parent ////////////////////////////////////////////////////////////
+Explanation in Code:
+Introduction:
+
+The introduction explains the purpose of the example, which is to demonstrate how to pass data from a child component to a parent component using Angular.
+How To Pass Single Data From Child to Parent Component:
+
+In child.component.ts, an EventEmitter is used to create an event for sending data to the parent component.
+The emitData method in the child component emits a string when called.
+In parent.component.ts, a method onReceiveData is defined to receive the data.
+In parent.component.html, the event sendData is bound to the method onReceiveData using the (sendData)="onReceiveData($event)" syntax.
+How To Pass An Array From Child to Parent Component:
+
+Similar to the single data example, but using an array.
+In child.component.ts, the emitArray method emits an array of strings.
+In parent.component.ts, a method onReceiveArray is defined to receive the array data.
+In parent.component.html, the event sendArray is bound to the method onReceiveArray.
+How To Pass An Object From Child to Parent Component:
+
+Similar to the single data example, but using an object.
+In child.component.ts, the emitObject method emits an object.
+In parent.component.ts, a method onReceiveObject is defined to receive the object data.
+In parent.component.html, the event sendObject is bound to the method onReceiveObject.
+These examples demonstrate how to pass various types of data from a child component to a parent component in Angular, making use of Angular's EventEmitter and output decorators.

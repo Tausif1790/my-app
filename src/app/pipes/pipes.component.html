@@ -1,0 +1,37 @@
+<h1>Angular Pipes</h1>
+
+<!-- Lowercase pipe -->
+<p><strong>Lowercase:</strong> {{ text | lowercase }}</p>
+
+<!-- Uppercase pipe -->
+<p><strong>Uppercase:</strong> {{ text | uppercase }}</p>
+
+<!-- Titlecase pipe -->
+<p><strong>Titlecase:</strong> {{ titleText | titlecase }}</p>
+
+<!-- Slice pipe -->
+<p><strong>Slice:</strong> {{ fruits | slice:1:3 }}</p>
+
+<!-- JSON pipe -->
+<p><strong>JSON:</strong> {{ jsonObject | json }}</p>
+
+<!-- Date pipe -->
+<p><strong>Today's Date:</strong> {{ today | date }}</p>
+<p><strong>Future Date (Full):</strong> {{ futureDate | date:'fullDate' }}</p>
+<p><strong>Future Date (Short):</strong> {{ futureDate | date:'shortDate' }}</p>
+<p><strong>Future Date (Custom):</strong> {{ futureDate | date:'MMMM d, y, h:mm a' }}</p>
+
+<!-- Currency pipe -->
+<p><strong>Price:</strong> {{ price | currency }}</p>
+<p><strong>Large Price (USD):</strong> {{ largePrice | currency:'USD':'symbol':'4.2-2' }}</p>
+<p><strong>Large Price (EUR):</strong> {{ largePrice | currency:'EUR':'symbol-narrow':'4.2-2' }}</p>
+
+<!-- Percent pipe -->
+<p><strong>Completion:</strong> {{ completion | percent }}</p>
+
+<!-- Decimal pipe -->
+<p><strong>Decimal:</strong> {{ decimalNumber | number:'1.2-2' }}</p>
+
+<!-- Custom pipe -->
+<p><strong>Alternate Case:</strong> {{ text | alternateCaseCustom }}</p>
+<p><strong>Add number with parameter :</strong> {{ 10 | custom: 8 : 2 }}</p>

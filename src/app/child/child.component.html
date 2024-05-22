@@ -1,0 +1,32 @@
+<!---------------------- Passing data Parent to Child Component ------------------------>
+<h2>Child Component</h2>
+
+<!-- Displaying single data -->
+<p>Received Data: {{ data }}</p>
+
+<!-- Displaying array data -->
+<div *ngIf="arrayData">
+    <h3>Array Data:</h3>
+    <ul>
+        <li *ngFor="let item of arrayData">{{ item }}</li>
+    </ul>
+</div>
+
+<!-- Displaying object data -->
+<div *ngIf="objectData">
+    <h3>Object Data:</h3>
+    <p>Name: {{ objectData.name }}</p>
+    <p>Age: {{ objectData.age }}</p>
+</div>
+
+<!---------------------- Passing data child to Parent Component ------------------------>
+<h2>Child Component</h2>
+
+<!-- Sending single data -->
+<button (click)="emitData()">Send Data to Parent</button>
+
+<!-- Sending array data -->
+<button (click)="emitArray()">Send Array to Parent</button>
+
+<!-- Sending object data -->
+<button (click)="emitObject()">Send Object to Parent</button>

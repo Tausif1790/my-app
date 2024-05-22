@@ -12,6 +12,13 @@ import { StyleBindingComponent } from './style-binding/style-binding.component';
 import { TemplateReferenceComponent } from './template-reference/template-reference.component';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
 import { FormsModule } from '@angular/forms';
+import { StructureDirectivesComponent } from './structure-directives/structure-directives.component';
+import { BootstrapComponent } from './bootstrap/bootstrap.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { PipesComponent } from './pipes/pipes.component';
+import { CustomPipe } from './pipes/custom.pipe';
+import { AlternateCaseCustomPipe } from './pipes/alternate-case-custom.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +30,14 @@ import { FormsModule } from '@angular/forms';
     NgClassDirComponent,
     StyleBindingComponent,
     TemplateReferenceComponent,
-    TwoWayBindingComponent
+    TwoWayBindingComponent,
+    StructureDirectivesComponent,
+    BootstrapComponent,
+    ParentComponent,
+    ChildComponent,
+    PipesComponent,
+    CustomPipe,
+    AlternateCaseCustomPipe
   ],
   imports: [
     BrowserModule,
