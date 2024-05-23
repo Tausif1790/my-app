@@ -1,0 +1,17 @@
+<h1>Student Data</h1>
+
+<!-- List of students -->
+<ul>
+  <li *ngFor="let student of students" (click)="onSelect(student)">
+    {{ student.name }}
+  </li>
+</ul>
+
+<!-- Details of the selected student (click on any student to see details)-->
+<div *ngIf="selectedStudent">
+  <h2>Student Details</h2>
+  <p><strong>ID:</strong> {{ selectedStudent.id }}</p>
+  <p><strong>Name:</strong> {{ selectedStudent.name }}</p>
+  <p><strong>Age:</strong> {{ selectedStudent.age }}</p>
+  <p><strong>Grade:</strong> {{ selectedStudent.grade }}</p>
+</div>

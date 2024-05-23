@@ -1,0 +1,16 @@
+<h1>Users Data</h1>
+
+<!-- Error message -->
+<div *ngIf="error" class="error">
+  {{ error }}
+</div>
+
+<!-- List of posts -->
+<ul *ngIf="users.length">
+  <li *ngFor="let user of users">
+    <h2>{{ user.title }}</h2>
+    <p><strong>Post ID:</strong> {{ user.id }}</p>
+    <p><strong>User ID:</strong> {{ user.userId }}</p>
+    <p>{{ user.body }}</p>
+  </li>
+</ul>
