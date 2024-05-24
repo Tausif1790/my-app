@@ -108,8 +108,10 @@
       name="department"
       #department="ngModel"
     >
+      <!-- initial selected value = "", disabled is not allowed to select again empty value-->
       <option value="" disabled selected>Select a department</option>
       <option *ngFor="let dept of departments" [value]="dept">{{ dept }}</option>
+      <!-- <option  value="Focat"> Focat </option> -->
     </select>
     <div *ngIf="department.invalid && department.touched" class="text-danger">
       Department is required.
@@ -118,6 +120,7 @@
 
   <div class="mb-3">
     <label class="form-label">Skills</label>
+    <!-- for single checkbox dont use ngFor -->
     <div *ngFor="let skill of skillsList" class="form-check">
       <input
         type="checkbox"

@@ -11,7 +11,7 @@ import { NgClassDirComponent } from './ng-class-dir/ng-class-dir.component';
 import { StyleBindingComponent } from './style-binding/style-binding.component';
 import { TemplateReferenceComponent } from './template-reference/template-reference.component';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
-import { FormsModule } from '@angular/forms';               // 35 (template driven form)
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';               // 35 (template driven form)  // 42 (reactive form)
 import { StructureDirectivesComponent } from './structure-directives/structure-directives.component';
 import { BootstrapComponent } from './bootstrap/bootstrap.component';
 import { ParentComponent } from './parent/parent.component';
@@ -25,6 +25,10 @@ import { HttpClientModule } from '@angular/common/http';          // 33 (api)
 import { UsersComponent } from './users/users.component'         // 33 (api)
 import { UserService } from './services/user.service';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { CustomDirectiveComponent } from './custom-directive/custom-directive.component';
+import { HighlightDirective } from './shared/highlight.directive';
+import { TextTransformDirective } from './shared/text-transform.directive';
 
 @NgModule({
   declarations: [
@@ -46,13 +50,18 @@ import { TemplateDrivenFormComponent } from './template-driven-form/template-dri
     AlternateCaseCustomPipe,
     StudentDataComponent,
     UsersComponent,
-    TemplateDrivenFormComponent
+    TemplateDrivenFormComponent,
+    ReactiveFormComponent,
+    CustomDirectiveComponent,
+    HighlightDirective,
+    TextTransformDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,               // added for ngModel (two way binding), // 35 (template driven form)
-    HttpClientModule            // 33 (api)
+    HttpClientModule,            // 33 (api)
+    ReactiveFormsModule         // 42 (reactive form)
   ],
   providers: [
     StudentService,

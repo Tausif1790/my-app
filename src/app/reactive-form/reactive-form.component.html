@@ -1,0 +1,155 @@
+<!-- reactive-form.component.html -->
+<h1>Employee Form</h1>
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" novalidate class="container mt-4">
+  <!-- Employee ID field -->
+  <div class="mb-3">
+    <label for="id" class="form-label">Employee ID</label>
+    <input
+      type="number"
+      id="id"
+      class="form-control"
+      formControlName="id"
+      [ngClass]="{'is-invalid': f['id'].touched && f['id'].invalid}"
+    />
+    <div *ngIf="f['id'].touched && f['id'].invalid" class="text-danger">
+      Employee ID is required.
+    </div>
+  </div>
+
+  <!-- Name field -->
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input
+      type="text"
+      id="name"
+      class="form-control"
+      formControlName="name"
+      [ngClass]="{'is-invalid': f['name'].touched && f['name'].invalid}"
+    />
+    <div *ngIf="f['name'].touched && f['name'].invalid" class="text-danger">
+      <div *ngIf="f['name'].errors?.['required']">Name is required.</div>
+      <div *ngIf="f['name'].errors?.['minlength']">Name must be at least 2 characters long.</div>
+    </div>
+    <div>
+        <p>( Touched = {{ f['name'].touched }} |
+            UnTouched = {{ f['name'].untouched }} |
+            Valid = {{ f['name'].valid }} |
+            InValid = {{ f['name'].invalid }} |
+            Dirty = {{ f['name'].dirty }} |
+            Pristine = {{ f['name'].pristine }} )</p>
+    </div>
+  </div>
+
+  <!-- Age field -->
+  <div class="mb-3">
+    <label for="age" class="form-label">Age</label>
+    <input
+      type="number"
+      id="age"
+      class="form-control"
+      formControlName="age"
+      [ngClass]="{'is-invalid': f['age'].touched && f['age'].invalid}"
+    />
+    <div *ngIf="f['age'].touched && f['age'].invalid" class="text-danger">
+      <div *ngIf="f['age'].errors?.['required']">Age is required.</div>
+      <div *ngIf="f['age'].errors?.['min']">Age must be at least 18.</div>
+      <div *ngIf="f['age'].errors?.['max']">Age must be less than 65.</div>
+    </div>
+  </div>
+
+  <!-- Gender field -->
+  <div class="mb-3">
+    <label class="form-label">Gender</label>
+    <div>
+      <div class="form-check form-check-inline">
+        <input
+          type="radio"
+          class="form-check-input"
+          id="male"
+          formControlName="gender"
+          value="Male"
+        />
+        <label class="form-check-label" for="male">Male</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input
+          type="radio"
+          class="form-check-input"
+          id="female"
+          formControlName="gender"
+          value="Female"
+        />
+        <label class="form-check-label" for="female">Female</label>
+      </div>
+    </div>
+    <div *ngIf="f['gender'].touched && f['gender'].invalid" class="text-danger">
+      Gender is required.
+    </div>
+  </div>
+
+  <!-- Department field -->
+  <div class="mb-3">
+    <label for="department" class="form-label">Department</label>
+    <select
+      id="department"
+      class="form-select"
+      formControlName="department"
+      [ngClass]="{'is-invalid': f['department'].touched && f['department'].invalid}"
+    >
+      <option value="" disabled>Select a department</option>
+      <option *ngFor="let dept of departments" [value]="dept">{{ dept }}</option>
+    </select>
+    <div *ngIf="f['department'].touched && f['department'].invalid" class="text-danger">
+      Department is required.
+    </div>
+  </div>
+
+  <!-- Skills field -->
+  <div class="mb-3" formArrayName="skills">
+    <label class="form-label">Skills</label>
+    <div *ngFor="let skill of skillsControls; let i = index" class="form-check">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        [formControlName]="i"
+        [id]="skillsList[i]"
+      />
+      <label class="form-check-label" [for]="skillsList[i]">{{ skillsList[i] }}</label>
+    </div>
+  </div>
+
+  <!-- Email field -->
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input
+      type="email"
+      id="email"
+      class="form-control"
+      formControlName="email"
+      [ngClass]="{'is-invalid': f['email'].touched && f['email'].invalid}"
+    />
+    <div *ngIf="f['email'].touched && f['email'].invalid" class="text-danger">
+      <div *ngIf="f['email'].errors?.['required']">Email is required.</div>
+      <div *ngIf="f['email'].errors?.['email']">Enter a valid email.</div>
+    </div>
+  </div>
+
+  <!-- Phone field -->
+  <div class="mb-3">
+    <label for="phone" class="form-label">Phone</label>
+    <input
+      type="tel"
+      id="phone"
+      class="form-control"
+      formControlName="phone"
+      [ngClass]="{'is-invalid': f['phone'].touched && f['phone'].invalid}"
+    />
+    <div *ngIf="f['phone'].touched && f['phone'].invalid" class="text-danger">
+      <div *ngIf="f['phone'].errors?.['required']">Phone is required.</div>
+      <div *ngIf="f['phone'].errors?.['pattern']">Enter a valid 10-digit phone number.</div>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="employeeForm.invalid">Submit</button>
+  <button type="button" class="btn btn-secondary" (click)="resetForm()">Reset</button>
+</form>
