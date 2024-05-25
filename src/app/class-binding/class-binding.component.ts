@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-class-binding',
@@ -11,7 +12,7 @@ export class ClassBindingComponent {
   hasError: boolean = false;
   currentClasses: {} = {}; 
 
-  constructor() {
+  constructor(private router: Router) {
     // Set current classes based on properties
     this.setCurrentClasses();
   }
@@ -38,5 +39,12 @@ export class ClassBindingComponent {
     else{
       return "b";
     }
+  }
+
+  // 57.Auxiliary Routes | Named Routes | Multiple Routes 
+  // button to close Auxiliary Router placeholder
+  // url with Auxiliary Route : "http://localhost:54165/home(outlet3:class-binding)"
+  close(){
+    this.router.navigate([{ outlets: { outlet3: null }}])
   }
 }

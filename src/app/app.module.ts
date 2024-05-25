@@ -29,6 +29,16 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { CustomDirectiveComponent } from './custom-directive/custom-directive.component';
 import { HighlightDirective } from './shared/highlight.directive';
 import { TextTransformDirective } from './shared/text-transform.directive';
+import { RoutingComponent } from './routing/routing.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HomeComponent } from './home/home.component';
+import { RoutingEmployeesComponent } from './routing-employees/routing-employees.component';
+import { RoutingEmployeeDetailsComponent } from './routing-employee-details/routing-employee-details.component';
+import { RoutingParentComponent } from './routing-parent/routing-parent.component';
+import { RoutingChild1Component } from './routing-child1/routing-child1.component';
+import { RoutingChild2Component } from './routing-child2/routing-child2.component';
+import { NgContentComponent } from './ng-content/ng-content.component';
+import { NgContentCourseComponent } from './ng-content-course/ng-content-course.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +64,17 @@ import { TextTransformDirective } from './shared/text-transform.directive';
     ReactiveFormComponent,
     CustomDirectiveComponent,
     HighlightDirective,
-    TextTransformDirective
+    TextTransformDirective,
+    RoutingComponent,
+    PageNotFoundComponent,
+    HomeComponent,
+    RoutingEmployeesComponent,
+    RoutingEmployeeDetailsComponent,
+    RoutingParentComponent,
+    RoutingChild1Component,
+    RoutingChild2Component,
+    NgContentComponent,
+    NgContentCourseComponent
   ],
   imports: [
     BrowserModule,

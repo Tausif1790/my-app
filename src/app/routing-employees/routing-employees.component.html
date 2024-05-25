@@ -1,0 +1,16 @@
+<div class="container mt-4">
+    <h1>Employees List</h1>
+    <ul class="list-group">
+      <li
+        *ngFor="let employee of employees"
+        (click)="onSelect(employee)"
+        class="list-group-item list-group-item-action"
+        [ngClass]="{'active': employee.id === selectedId}"
+      >
+        {{ employee.name }} - {{ employee.position }}
+      </li>
+    </ul>
+  </div>
+  
+  <!-- if current employee (employee.id) = selectedId the Highlight it
+  [ngClass]="{'active': employee.id === selectedId}" -->

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Student, StudentService } from '../services/student.service';
+import { Router } from '@angular/router'
 //import {/* Student,*/ StudentService } from 'services.student.service';   // error 
 
 @Component({
@@ -14,7 +15,7 @@ export class StudentDataComponent implements OnInit {
   students: Student[] = [];
   selectedStudent: Student | undefined;
 
-  constructor(private studentService: StudentService) { 
+  constructor(private studentService: StudentService, private router: Router) { 
     // or do it here
     // Fetch the list of students when the component initializes
     this.students = this.studentService.getStudents();
@@ -28,6 +29,16 @@ export class StudentDataComponent implements OnInit {
   onSelect(student: Student): void {
     // Fetch and display details of the selected student
     this.selectedStudent = this.studentService.getStudentById(student.id);
+  }
+
+  // 57.Auxiliary Routes | Named Routes | Multiple Routes 
+  // button to close Auxiliary Router placeholder
+  // url with Auxiliary Route : "http://localhost:54165/home(outlet2:student-data)"
+  close(){
+    this.router.navigate([{ outlets: { outlet2: null }}]);
+
+    // close both Auxiliary Routes at once
+    //this.router.navigate([{ outlets: { outlet2: null, outlet3: null }}]);
   }
 }
 
